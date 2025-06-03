@@ -33,7 +33,7 @@ function App() {
           <h1>{slides[step].title}</h1>
           <p>{slides[step].desc}</p>
         </div>
-        <div className="absolute bottom-0 p-7 w-full flex justify-between bg-zinc-50 shadow rounded-tl-4xl rounded-tr-4xl">
+        <div className="absolute bottom-0 h-30 p-7 w-full flex justify-between items-center bg-zinc-50 shadow rounded-tl-4xl rounded-tr-4xl">
           <button onClick={skip} className="text-blue-400">
             Skip
           </button>
