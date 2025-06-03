@@ -27,13 +27,13 @@ function App() {
   }
 
   return (
-    <div className="h-screen relative bg-blue-700 overflow-hidden">
+    <div className="h-[90vh] relative bg-blue-700 overflow-hidden">
       <div className="h-full flex flex-col items-center justify-center bg-slate-200">
         <div className={`text-center ${animation}`}>
           <h1>{slides[step].title}</h1>
           <p>{slides[step].desc}</p>
         </div>
-        <div className="absolute bottom-0 h-30 p-7 w-full flex justify-between items-center bg-zinc-50 shadow rounded-tl-4xl rounded-tr-4xl">
+        <div className="absolute bottom-0 p-7 w-full flex justify-between items-center bg-zinc-50 shadow rounded-tl-4xl rounded-tr-4xl">
           <button onClick={skip} className="text-blue-400">
             Skip
           </button>
