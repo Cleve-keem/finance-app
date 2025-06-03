@@ -27,7 +27,7 @@ function App() {
   }
 
   return (
-    <div className="h-[90vh] relative bg-blue-700 overflow-hidden">
+    <div className="h-[100dvh] relative bg-blue-700 overflow-hidden">
       <div className="h-full flex flex-col items-center justify-center bg-slate-200">
         <div className={`text-center ${animation}`}>
           <h1>{slides[step].title}</h1>
