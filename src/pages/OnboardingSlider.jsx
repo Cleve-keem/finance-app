@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const slides = [
   { title: "Welcome", desc: "Learn what we offer" },
@@ -9,6 +10,7 @@ const slides = [
 export default function OnboardingSlider() {
   const [step, setStep] = useState(0);
   const [animation, setAnimation] = useState("");
+  const navigate = useNavigate();
   const lastSlide = slides.length - 1;
 
   function nextSlide() {
@@ -22,13 +24,12 @@ export default function OnboardingSlider() {
         setTimeout(() => setAnimation(""), 500);
       }, 500);
     } else {
-      console.log("Get started");
+      navigate("/login");
     }
   }
 
   function skip() {
     setStep(lastSlide);
-    console.log("Skipped");
   }
 
   const { title, desc } = slides[step];
