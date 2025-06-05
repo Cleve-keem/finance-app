@@ -8,8 +8,8 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route index element={<OnboardingSlider />} />
         <Route element={<AuthLayout />}>
-          <Route index element={<OnboardingSlider />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Route>
