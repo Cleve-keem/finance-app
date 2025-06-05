@@ -1,6 +1,6 @@
 import React from "react";
 import { FaGoogle } from "react-icons/fa";
-import { FaFacebookF, FaTwitter } from "react-icons/fa6";
+import { FaArrowLeftLong, FaFacebookF, FaTwitter } from "react-icons/fa6";
 import { Link, Outlet, useLocation } from "react-router";
 
 export default function AuthLayout() {
@@ -8,10 +8,13 @@ export default function AuthLayout() {
   const isLoginPage = location.pathname.includes("/login");
   return (
     <div className="w-full px-8">
-      <div className="w-[90%] mx-auto">
+      <div className="w-[90%] mx-auto py-10 relative">
+        <span className="absolute text-xl">
+          <FaArrowLeftLong />
+        </span>
         <div className="flex justify-center">
-          <div className="size-30 mb-5">
-            <img src="/finance.jpg" alt="finance logo" />
+          <div className="size-30 my-5">
+            <img src="/finance.jpg" alt="finance logo" className="w-full h-full block object-center object-cover"/>
           </div>
         </div>
         <p className="text-2xl font-semibold">
@@ -48,7 +51,10 @@ export default function AuthLayout() {
         </div>
         {isLoginPage && (
           <p className="text-center my-7">
-            Don't have an account? <Link>Sign up</Link>
+            Don't have an account?
+            <Link to="/register" className="ml-1 text-blue-500 hover:underline">
+              Sign up
+            </Link>
           </p>
         )}
       </div>
