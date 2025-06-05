@@ -27,6 +27,7 @@ export default function OnboardingSlider() {
   }
 
   function skip() {
+    setStep(lastSlide);
     console.log("Skipped");
   }
 
