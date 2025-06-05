@@ -1,7 +1,7 @@
 import React from "react";
-import { FaGoogle } from "react-icons/fa";
-import { FaArrowLeftLong, FaFacebookF, FaTwitter } from "react-icons/fa6";
+import { FaArrowLeftLong } from "react-icons/fa6";
 import { Link, Outlet, useLocation } from "react-router";
+import Socials from "../components/Socials";
 
 export default function AuthLayout() {
   const location = useLocation();
@@ -23,10 +23,10 @@ export default function AuthLayout() {
             />
           </div>
         </div>
-        <p className="text-2xl font-semibold">
+        <p className="text-xl font-semibold">
           {isLoginPage ? "Login to your Account" : "Create your Account"}
         </p>
-        <div>
+        <div className="my-3">
           <Outlet />
         </div>
         <div className="flex flex-col gap-9 py-10">
@@ -37,23 +37,7 @@ export default function AuthLayout() {
             </p>
             <div className="w-3 h-[1px] bg-zinc-500" />
           </div>
-          <ul className="flex items-center gap-3">
-            <li className="text-2xl flex-1 flex justify-center shadow-md p-4">
-              <a href="#" className="block text-inherit">
-                <FaGoogle />
-              </a>
-            </li>
-            <li className="text-2xl flex-1 flex justify-center shadow-md p-4">
-              <a href="" className="block text-inherit">
-                <FaFacebookF />
-              </a>
-            </li>
-            <li className="text-2xl flex-1 flex justify-center shadow-md p-4">
-              <a href="" className="block text-inherit">
-                <FaTwitter />
-              </a>
-            </li>
-          </ul>
+          <Socials />
         </div>
         {isLoginPage && (
           <p className="text-center my-7">
