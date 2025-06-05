@@ -9,12 +9,18 @@ export default function AuthLayout() {
   return (
     <div className="w-full px-8">
       <div className="w-[90%] mx-auto py-10 relative">
-        <span className="absolute text-xl">
-          <FaArrowLeftLong />
-        </span>
+        {!isLoginPage && (
+          <Link to="/login" className="absolute text-xl">
+            <FaArrowLeftLong />
+          </Link>
+        )}
         <div className="flex justify-center">
           <div className="size-30 my-5">
-            <img src="/finance.jpg" alt="finance logo" className="w-full h-full block object-center object-cover"/>
+            <img
+              src="/finance.jpg"
+              alt="finance logo"
+              className="w-full h-full block object-center object-cover"
+            />
           </div>
         </div>
         <p className="text-2xl font-semibold">
