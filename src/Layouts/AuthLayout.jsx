@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { Link, Outlet, useLocation } from "react-router";
 import Socials from "../components/Socials";
 
 export default function AuthLayout() {
   const location = useLocation();
-  const [animation, setAnimation] = useState("");
+  const sliderRef = useRef(null);
   const isLoginPage = location.pathname.includes("/login");
 
-  let slider = document.getElementById("slider");
   function animateTo(direction) {
+    const slider = sliderRef.current;
+    if (!slider) return;
+
     slider.classList.add(
       direction === "left" ? "slide-out" : "slide-out-right"
     );
@@ -51,7 +53,7 @@ export default function AuthLayout() {
         <p className="text-xl font-semibold">
           {isLoginPage ? "Login to your Account" : "Create your Account"}
         </p>
-        <div className={`my-3 ${animation}`} id="slider">
+        <div className={`my-3`} ref={sliderRef}>
           <Outlet />
         </div>
         <div className="flex flex-col gap-9 py-10">
