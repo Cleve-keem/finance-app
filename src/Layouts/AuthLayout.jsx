@@ -31,7 +31,7 @@ export default function AuthLayout() {
 
   return (
     <div className="w-full px-8">
-      <div className="w-[90%] mx-auto py-10 relative">
+      <div className="w-[90%] mx-auto py-10 relative" ref={sliderRef}>
         {!isLoginPage && (
           <Link
             onClick={() => animateTo("right")}
@@ -53,7 +53,7 @@ export default function AuthLayout() {
         <p className="text-xl font-semibold">
           {isLoginPage ? "Login to your Account" : "Create your Account"}
         </p>
-        <div className={`my-3`} ref={sliderRef}>
+        <div className={`my-3`}>
           <Outlet />
         </div>
         <div className="flex flex-col gap-9 py-10">
