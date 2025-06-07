@@ -16,25 +16,28 @@ export default function AppLayout() {
 
   return (
     <div>
-      <header className="flex items-center justify-between shadow-md px-2 mb-3">
+      <header className="w-full flex items-center justify-between shadow-md px-2 mb-3">
         <div className="size-20">
           <img src="/finance.jpg" alt="finance logo" />
         </div>
-        <button onClick={openNav} className="flex flex-col gap-1">
+        <button
+          onClick={openNav}
+          className="flex flex-col gap-1 relative w-8 h-8"
+        >
           <div
-            className={`block w-8 h-1 bg-black ${
-              isNavOpen ? "-rotate-50" : ""
-            } transition-all duration-500`}
+            className={`absolute w-8 h-1 bg-black origin-center transition-all duration-500 left-0 ${
+              isNavOpen ? "-rotate-45 top-3" : "top-0"
+            }`}
           />
           <div
-            className={`block w-8 h-1 bg-black ${
-              isNavOpen ? "hidden" : ""
-            } transition-all duration-500`}
+            className={`absolute w-8 h-1 bg-black transition-all duration-500 left-0 ${
+              isNavOpen ? "opacity-0" : ""
+            } `}
           />
           <div
-            className={`block w-8 h-1 bg-black ${
-              isNavOpen ? "rotate-50" : ""
-            } transition-all duration-500`}
+            className={`absolute block w-8 h-1 bg-black origin-center transition-all duration-500 left-0 ${
+              isNavOpen ? "rotate-45 top-3.5" : "top-4"
+            }`}
           />
         </button>
         <nav
