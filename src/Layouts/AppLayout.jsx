@@ -1,3 +1,4 @@
+import { GrTransaction } from "react-icons/gr";
 import { IoHome } from "react-icons/io5";
 import { NavLink, Outlet } from "react-router";
 
@@ -15,8 +16,8 @@ export default function AppLayout() {
         </button>
         <nav className="absolute top-0 left-0 w-[50%] bottom-0 bg-zinc-900 text-zinc-50 shadow-md">
           <h1 className="text-2xl font-bold ml-5 mt-5 mb-9">Finance</h1>
-          <ul className="flex flex-col w-[85%] border">
-            <li className="py-3">
+          <ul className="flex flex-col w-[85%]">
+            <li className="py-3 hover:bg-amber-100 hover:text-zinc-900 hover:rounded-tr-2xl hover:rounded-br-2xl cursor-pointer">
               <NavLink to="/dashboard" className="nav-link">
                 <span>
                   <IoHome />
@@ -27,24 +28,28 @@ export default function AppLayout() {
             <li className="py-3">
               <NavLink to="/transactions" className="nav-link">
                 <span>
-                  <IoHome />
+                  <GrTransaction />
                 </span>
                 <span>Transactions</span>
               </NavLink>
             </li>
-            <li>
+            <li className="py-3">
               <NavLink className="nav-link">
-                <spans>icons</spans>
+                <GrTransaction />
                 <span>Budgets</span>
               </NavLink>
-            </li> 
-            <li>
-              <NavLink className="nav-link">
-              <spans>icons</spans>
-              <span>P</span></NavLink>
             </li>
-            <li>
-              <NavLink className="nav-link">Recurring Bills</NavLink>
+            <li className="py-3">
+              <NavLink className="nav-link">
+                <GrTransaction />
+                <span>Pots</span>
+              </NavLink>
+            </li>
+            <li className="py-3">
+              <NavLink className="nav-link">
+                <GrTransaction />
+                <span>Recurring Bills</span>
+              </NavLink>
             </li>
           </ul>
         </nav>
