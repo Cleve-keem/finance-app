@@ -1,4 +1,4 @@
-import MoneyBox from "../components/moneyBox";
+import MoneyBox from "../components/MoneyBox";
 
 export default function Dashboard() {
   return (
