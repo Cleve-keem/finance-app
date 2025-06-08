@@ -1,4 +1,7 @@
-
-export default function AuthForm({ children }) {
-  return <form className="flex flex-col">{children}</form>;
+export default function AuthForm({ children, onSubmit }) {
+  return (
+    <form onSubmit={onSubmit} className="flex flex-col">
+      {children}
+    </form>
+  );
 }

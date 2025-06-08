@@ -1,8 +1,13 @@
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 export default function FormInput({ name, type, placeholder }) {
   const [showPassword, setShowPassword] = useState(false);
+  const {
+    register,
+    formState: { errors },
+  } = useForm();
 
   function toggleVisibility() {
     setShowPassword((prev) => !prev);
@@ -16,6 +21,7 @@ export default function FormInput({ name, type, placeholder }) {
           type={type}
           name={name}
           placeholder={placeholder}
+          {...register(name, { required: `${name} is required` })}
         />
       ) : (
         <div className="relative flex items-center mb-5">
@@ -24,6 +30,18 @@ export default function FormInput({ name, type, placeholder }) {
             type={showPassword ? "text" : type}
             name={name}
             placeholder={placeholder}
+            {...register(name, {
+              required: `${name} is required!`,
+              minLength: {
+                value: 8,
+                message: "password must be at least 8 characters long",
+              },
+              pattern: {
+                value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).+$/,
+                message:
+                  "must contain uppercase, lowercase, number, and special character",
+              },
+            })}
           />
           <span
             onClick={toggleVisibility}
@@ -34,6 +52,7 @@ export default function FormInput({ name, type, placeholder }) {
           </span>
         </div>
       )}
+      {errors?.[name] && <p>{errors?.[name].message}</p>}
     </div>
   );
 }

@@ -54,7 +54,7 @@ export default function AuthLayout() {
           {isLoginPage ? "Login to your Account" : "Create your Account"}
         </p>
         <div className={`my-3`}>
-          <Outlet />
+          <Outlet/>
         </div>
         <div className="flex flex-col gap-9 py-10">
           <div className="flex items-center justify-center gap-1 text-zinc-500">
