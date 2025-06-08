@@ -2,11 +2,18 @@ import React, { useRef, useState } from "react";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { Link, Outlet, useLocation } from "react-router";
 import Socials from "../components/Socials";
+import { useForm } from "react-hook-form";
 
 export default function AuthLayout() {
   const location = useLocation();
   const sliderRef = useRef(null);
   const isLoginPage = location.pathname.includes("/login");
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
 
   function animateTo(direction) {
     const slider = sliderRef.current;
@@ -54,7 +61,14 @@ export default function AuthLayout() {
           {isLoginPage ? "Login to your Account" : "Create your Account"}
         </p>
         <div className={`my-3`}>
-          <Outlet/>
+          <Outlet
+            context={{
+              register,
+              errors,
+              reset,
+              handleSubmit,
+            }}
+          />
         </div>
         <div className="flex flex-col gap-9 py-10">
           <div className="flex items-center justify-center gap-1 text-zinc-500">

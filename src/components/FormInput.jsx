@@ -1,37 +1,34 @@
 import { useState } from "react";
-import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import { useOutletContext } from "react-router";
 
 export default function FormInput({ name, type, placeholder }) {
   const [showPassword, setShowPassword] = useState(false);
-  const {
-    register,
-    formState: { errors },
-  } = useForm();
+  const { register, errors } = useOutletContext();
 
   function toggleVisibility() {
     setShowPassword((prev) => !prev);
   }
 
   return (
-    <div>
+    <div className="mb-5">
       {type !== "password" ? (
         <input
-          className="shadow-sm w-full px-5 py-3 mb-5 rounded-[5px]"
+          className="shadow-sm w-full px-5 py-3 rounded-[5px] mb-0.5"
           type={type}
           name={name}
           placeholder={placeholder}
-          {...register(name, { required: `${name} is required` })}
+          {...register(name, { required: `field is required` })}
         />
       ) : (
-        <div className="relative flex items-center mb-5">
+        <div className="relative flex items-center mb-0.5">
           <input
             className="shadow-sm w-full px-5 py-3 rounded-[5px]"
             type={showPassword ? "text" : type}
             name={name}
             placeholder={placeholder}
             {...register(name, {
-              required: `${name} is required!`,
+              required: `field is required`,
               minLength: {
                 value: 8,
                 message: "password must be at least 8 characters long",
@@ -52,7 +49,7 @@ export default function FormInput({ name, type, placeholder }) {
           </span>
         </div>
       )}
-      {errors?.[name] && <p>{errors?.[name].message}</p>}
+      {errors?.[name] && <p className="">{errors?.[name].message}</p>}
     </div>
   );
 }

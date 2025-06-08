@@ -2,16 +2,15 @@ import React from "react";
 import AuthForm from "../../components/AuthForm";
 import FormInput from "../../components/FormInput";
 import Button from "../../components/Button";
-import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router";
+import { useNavigate, useOutletContext } from "react-router";
 
 export default function Login() {
-  const { handleSubmit } = useForm();
+  const { handleSubmit } = useOutletContext();
   const navigate = useNavigate();
 
   function handleLogin(data) {
     console.log(data);
-    navigate("/dashboard");
+    // navigate("/dashboard");
   }
 
   return (
