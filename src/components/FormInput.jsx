@@ -49,7 +49,7 @@ export default function FormInput({ name, type, placeholder }) {
           </span>
         </div>
       )}
-      {errors?.[name] && <p className="">{errors?.[name].message}</p>}
+      {errors?.[name] && <p className="error">{errors?.[name].message}</p>}
     </div>
   );
 }

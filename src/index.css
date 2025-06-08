@@ -4,6 +4,9 @@
   .nav-link {
     @apply pl-5 flex items-center gap-2;
   }
+  .error {
+    @apply text-red-600
+  }
 }
 
 button {

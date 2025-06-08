@@ -9,28 +9,32 @@ import Transaction from "./pages/Transaction";
 import Budget from "./pages/Budget";
 import RecurringBill from "./pages/RecurringBill";
 import Pot from "./pages/Pot";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route index element={<OnboardingSlider />} />
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<OnboardingSlider />} />
 
-        <Route element={<AuthLayout />}>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-        </Route>
+          <Route element={<AuthLayout />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Route>
 
-        <Route element={<AppLayout />}>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/transactions" element={<Transaction />} />
-          <Route path="/budgets" element={<Budget />} />
-          <Route path="/pots" element={<Pot />} />
-          <Route path="/recurringbills" element={<RecurringBill />} />
-        </Route>
+          <Route element={<AppLayout />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/transactions" element={<Transaction />} />
+            <Route path="/budgets" element={<Budget />} />
+            <Route path="/pots" element={<Pot />} />
+            <Route path="/recurringbills" element={<RecurringBill />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
 
-      </Routes>
-    </BrowserRouter>
+      <Toaster position="top-center" reverseOrder={false} />
+    </>
   );
 }
 

@@ -1,10 +1,13 @@
+import toast from "react-hot-toast";
 import AuthForm from "../../components/AuthForm";
 import Button from "../../components/Button";
 import FormInput from "../../components/FormInput";
-import { useOutletContext } from "react-router";
+import { useNavigate, useOutletContext } from "react-router";
+import { BsDatabaseExclamation } from "react-icons/bs";
 
 export default function Register() {
-  const { handleSubmit, errors } = useOutletContext();
+  const { handleSubmit, reset, animateTo } = useOutletContext();
+  const navigate = useNavigate();
 
   function onRegister(data) {
     const { email, password, confirmPassword } = data;
@@ -12,12 +15,17 @@ export default function Register() {
       return;
     }
 
-    // if (password !== confirmPassword) {
-       
-    //   return;
-    // }
-    // console.log({ email, password, confirmPassword });
+    if (password !== confirmPassword) {
+      toast.error("passwords are not the same!");
+      return;
+    }
+
+    localStorage.setItem("user", JSON.stringify(data));
+    toast.success("Account created!");
     console.log(data);
+    reset();
+    animateTo("right");
+    navigate("/login");
   }
 
   return (

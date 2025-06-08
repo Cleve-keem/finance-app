@@ -67,6 +67,7 @@ export default function AuthLayout() {
               errors,
               reset,
               handleSubmit,
+              animateTo,
             }}
           />
         </div>
