@@ -126,7 +126,7 @@ export default function Transactions() {
               />
               <button className="border">S</button>
             </div>
-            <button className="border !p-2">Filter</button>
+            <button className="border !p-2 w-auto">Filter</button>
           </div>
           <ul className="divide-y divide-zinc-100">
             {transactions.map((trans) => (
