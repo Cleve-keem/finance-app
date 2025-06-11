@@ -7,10 +7,12 @@
   .error {
     @apply text-red-600
   }
+  .button {
+    @apply py-2 px-4
+  }
 }
 
 button {
-  /* padding: 0.5rem 1rem; */
   /* min-width: fit-content; */
   cursor: pointer;
 }

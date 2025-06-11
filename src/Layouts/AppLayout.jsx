@@ -26,7 +26,7 @@ export default function AppLayout() {
           </div>
           <button
             onClick={openNav}
-            className="flex flex-col gap-1 relative w-8"
+            className="button flex flex-col gap-1 relative w-8"
           >
             <div
               className={`absolute w-6 h-[2px] bg-black origin-center transition-all duration-500 left-0 ${

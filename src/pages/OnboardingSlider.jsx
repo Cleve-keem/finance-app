@@ -57,7 +57,7 @@ export default function OnboardingSlider() {
           </div>
           <div className="w-full flex justify-between">
             {step < lastSlide ? (
-              <button onClick={skip} className="text-zinc-900">
+              <button onClick={skip} className="button text-zinc-900">
                 Skip
               </button>
             ) : (
@@ -65,7 +65,7 @@ export default function OnboardingSlider() {
             )}
             <button
               onClick={nextSlide}
-              className={`bg-zinc-900 text-zinc-50 rounded-[5px] ${
+              className={`button bg-zinc-900 text-zinc-50 rounded-[5px] ${
                 !(step < lastSlide) ? "flex-1 transition-all duration-500" : ""
               }`}
             >
