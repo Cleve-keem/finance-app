@@ -10,8 +10,8 @@
 }
 
 button {
-  padding: 0.5rem 1rem;
-  min-width: fit-content;
+  /* padding: 0.5rem 1rem; */
+  /* min-width: fit-content; */
   cursor: pointer;
 }
 
