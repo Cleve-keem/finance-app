@@ -19,8 +19,8 @@ export default function AppLayout() {
 
   return (
     <div className="h-screen">
-      <header className="fixed left-0 right-0 bg-zinc-50">
-        <div className="flex items-center justify-between shadow-md px-2">
+      <header className="fixed left-0 right-0 h-20 bg-zinc-50">
+        <div className="flex items-center justify-between shadow-md ">
           <div className="size-20">
             <img src="/finance.jpg" alt="finance logo" />
           </div>
@@ -96,7 +96,7 @@ export default function AppLayout() {
         </nav>
       </header>
 
-      <main>
+      <main className="pt-20">
         <Outlet />
       </main>
     </div>
