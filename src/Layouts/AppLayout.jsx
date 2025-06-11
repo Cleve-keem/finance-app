@@ -19,27 +19,27 @@ export default function AppLayout() {
 
   return (
     <div className="h-screen">
-      <header className="fixed left-0 right-0 h-20 bg-zinc-50">
-        <div className="flex items-center justify-between shadow-md ">
-          <div className="size-20">
-            <img src="/finance.jpg" alt="finance logo" />
+      <header className="fixed left-0 right-0 bg-zinc-50">
+        <div className="flex items-center justify-between shadow-md px-2">
+          <div className="size-15">
+            <img src="/finance-logo.png"lt="finance logo" />
           </div>
           <button
             onClick={openNav}
-            className="flex flex-col gap-1 relative w-8 h-8"
+            className="flex flex-col gap-1 relative w-8"
           >
             <div
-              className={`absolute w-8 h-1 bg-black origin-center transition-all duration-500 left-0 ${
+              className={`absolute w-6 h-[2px] bg-black origin-center transition-all duration-500 left-0 ${
                 isNavOpen ? "-rotate-45 top-3" : "top-0"
               }`}
             />
             <div
-              className={`absolute w-8 h-1 bg-black transition-all duration-500 left-0 ${
+              className={`absolute w-8 h-[2px] bg-black transition-all duration-500 left-0 ${
                 isNavOpen ? "opacity-0" : ""
               } `}
             />
             <div
-              className={`absolute block w-8 h-1 bg-black origin-center transition-all duration-500 left-0 ${
+              className={`absolute block w-6 h-[2px] bg-black origin-center transition-all duration-500 left-0 ${
                 isNavOpen ? "rotate-45 top-3.5" : "top-4"
               }`}
             />
@@ -96,7 +96,7 @@ export default function AppLayout() {
         </nav>
       </header>
 
-      <main className="pt-20">
+      <main className="pt-15">
         <Outlet />
       </main>
     </div>

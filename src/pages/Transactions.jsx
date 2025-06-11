@@ -117,7 +117,7 @@ export default function Transactions() {
       <h1 className="text-2xl font-semibold mb-10">Transactions</h1>
       <div className="bg-white p-4 rounded-xl">
         <div>
-          <div className="flex items-center gap-3 mb-2">
+          <div className="flex-1 flex items-center gap-3 mb-2">
             <div className="border border-zinc-300 flex flex-1 rounded-[5px]">
               <input
                 type="text"
@@ -126,7 +126,7 @@ export default function Transactions() {
               />
               <button className="border">S</button>
             </div>
-            <button className="border">Filter</button>
+            <button className="border !p-2">Filter</button>
           </div>
           <ul className="divide-y divide-zinc-100">
             {transactions.map((trans) => (
