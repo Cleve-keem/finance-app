@@ -124,7 +124,7 @@ export default function Transactions() {
                 placeholder="Search Transaction"
                 className="py-2 px-3 outline-none flex-1 shrink-1"
               />
-              <button className="button border border-zinc-200 px-2.5">S</button>
+              <button className="button w-fit border border-zinc-200 px-2.5">S</button>
             </div>
             <button className="border border-zinc-200 px-2.5 py-1.5">Filter</button>
           </div>
