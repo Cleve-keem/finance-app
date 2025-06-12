@@ -118,19 +118,15 @@ export default function Transactions() {
       <div className="bg-white p-4 rounded-xl">
         <div>
           <div className="flex-1 flex items-center gap-3 mb-2">
-            <div className="border border-zinc-300 flex flex-1 rounded-[5px] overflow-hidden">
+            <div className="border border-zinc-300 flex rounded-[5px] overflow-hidden">
               <input
                 type="text"
                 placeholder="Search Transaction"
-                className="py-2 px-3 outline-none flex-1 shrink"
+                className="py-2 px-3 outline-none"
               />
-              <button className="min-w-10 button border border-zinc-200">
-                S
-              </button>
+              <button className="button border border-zinc-200">S</button>
             </div>
-            <div>
-              <button className="border border-zinc-200 button">Filter</button>
-            </div>
+            <button className="border border-zinc-200 button">Filter</button>
           </div>
           <ul className="divide-y divide-zinc-100">
             {transactions.map((trans) => (
