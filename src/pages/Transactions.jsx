@@ -122,7 +122,7 @@ export default function Transactions() {
               <input
                 type="text"
                 placeholder="Search Transaction"
-                className="py-2 px-3 outline-none flex-1"
+                className="py-2 px-3 outline-none flex-1 shrink"
               />
               <button className="min-w-10 button border border-zinc-200">
                 S
