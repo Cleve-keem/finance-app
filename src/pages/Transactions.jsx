@@ -122,13 +122,15 @@ export default function Transactions() {
               <input
                 type="text"
                 placeholder="Search Transaction"
-                className="py-2 px-3 outline-none"
+                className="py-2 px-3 outline-none flex-1"
               />
-              <button className="min-w-10 button border border-zinc-200">S</button>
+              <button className="min-w-10 button border border-zinc-200">
+                S
+              </button>
             </div>
-            <button className="border border-zinc-200 px-2.5 py-1.5">
-              Filter
-            </button>
+            <div>
+              <button className="border border-zinc-200 button">Filter</button>
+            </div>
           </div>
           <ul className="divide-y divide-zinc-100">
             {transactions.map((trans) => (
