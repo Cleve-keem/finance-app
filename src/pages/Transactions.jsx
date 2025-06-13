@@ -1,6 +1,7 @@
-import { FaFilter } from "react-icons/fa";
+import { useState } from "react";
+import Button from "../components/Button";
+import SearchBar from "../components/SearchBar";
 import TransactionDetails from "../features/Transaction/TransactionDetails";
-import { FiSearch } from "react-icons/fi";
 
 const transactions = [
   {
@@ -10,7 +11,7 @@ const transactions = [
     amount: -25.0,
     date: "2024-08-29",
     time: "21:45",
-    image: "", // optional: can be added if available
+    image: "",
   },
   {
     id: 2,
@@ -114,30 +115,32 @@ const transactions = [
 ];
 
 export default function Transactions() {
+  const [visibleCount, setVisibleCount] = useState(10);
+
+  function handleLoadMore() {
+    setVisibleCount((prev) => prev + 10);
+  }
+
+  const visibleTransactions = transactions.slice(0, visibleCount);
+
   return (
     <div className="p-5 bg-zinc-100 min-h-screen">
       <h1 className="text-2xl font-semibold mb-10">Transactions</h1>
-      <div className="bg-white p-4 rounded-xl">
-        <div className="w-full flex items-stretch gap-3 my-2">
-          <div className="grow border border-zinc-300 flex items-center rounded-[5px] overflow-hidden w-full">
-            <input
-              type="text"
-              placeholder="Search Transaction"
-              className="py-2 px-3 outline-none grow min-w-10"
-            />
-            <button className="button whitespace-nowrap flex-none">
-              <FiSearch />
-            </button>
-          </div>
-          <button className="button flex-none">
-            <FaFilter />
-          </button>
-        </div>
+      <div className="bg-white p-4 rounded-xl mb-5">
+        <SearchBar />
         <ul className="divide-y divide-zinc-100">
-          {transactions.map((trans) => (
+          {visibleTransactions.map((trans) => (
             <TransactionDetails key={trans.id} trans={trans} />
           ))}
         </ul>
+      </div>
+
+      <div className="w-fit mx-auto">
+        {visibleCount < transactions.length ? (
+          <Button variant="small" onClick={handleLoadMore}>Load More</Button>
+        ) : (
+          <p className="text-zinc-400 text-[12px]">All transactions</p>
+        )}
       </div>
     </div>
   );
