@@ -113,19 +113,19 @@ const transactions = [
 
 export default function Transactions() {
   return (
-    <div className="p-5 bg-zinc-100">
+    <div className="p-5 bg-zinc-100 min-h-screen">
       <h1 className="text-2xl font-semibold mb-10">Transactions</h1>
       <div className="bg-white p-4 rounded-xl">
-        <div className="max-w-full flex items-center gap-3 my-2">
-          <div className="grow border border-zinc-300 flex items-center rounded-[5px] overflow-hidden">
+        <div className="w-full flex items-stretch gap-3 my-2">
+          <div className="grow border border-zinc-300 flex items-center rounded-[5px] overflow-hidden w-full">
             <input
               type="text"
               placeholder="Search Transaction"
-              className="py-2 px-3 outline-none grow"
+              className="py-2 px-3 outline-none grow min-w-10"
             />
-            <button className="button border border-zinc-200">S</button>
+            <button className="button bg-zinc-500 text-zinc-50 whitespace-nowrap flex-none">S</button>
           </div>
-          <button className="border border-zinc-200 button">Filter</button>
+          <button className="bg-zinc-500 text-zinc-50 button flex-none">Filter</button>
         </div>
         <ul className="divide-y divide-zinc-100">
           {transactions.map((trans) => (
