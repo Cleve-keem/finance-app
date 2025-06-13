@@ -116,24 +116,22 @@ export default function Transactions() {
     <div className="p-5 bg-zinc-100">
       <h1 className="text-2xl font-semibold mb-10">Transactions</h1>
       <div className="bg-white p-4 rounded-xl">
-        <div>
-          <div className="flex-1 flex items-center gap-3 mb-2">
-            <div className="border border-zinc-300 flex rounded-[5px] overflow-hidden">
-              <input
-                type="text"
-                placeholder="Search Transaction"
-                className="py-2 px-3 outline-none"
-              />
-              <button className="button border border-zinc-200">S</button>
-            </div>
-            <button className="border border-zinc-200 button">Filter</button>
+        <div className="max-w-full flex items-center gap-3 my-2">
+          <div className="grow border border-zinc-300 flex items-center rounded-[5px] overflow-hidden">
+            <input
+              type="text"
+              placeholder="Search Transaction"
+              className="py-2 px-3 outline-none grow"
+            />
+            <button className="button border border-zinc-200">S</button>
           </div>
-          <ul className="divide-y divide-zinc-100">
-            {transactions.map((trans) => (
-              <TransactionDetails key={trans.id} trans={trans} />
-            ))}
-          </ul>
+          <button className="border border-zinc-200 button">Filter</button>
         </div>
+        <ul className="divide-y divide-zinc-100">
+          {transactions.map((trans) => (
+            <TransactionDetails key={trans.id} trans={trans} />
+          ))}
+        </ul>
       </div>
     </div>
   );
