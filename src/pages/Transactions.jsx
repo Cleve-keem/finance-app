@@ -1,4 +1,6 @@
+import { FaFilter } from "react-icons/fa";
 import TransactionDetails from "../features/Transaction/TransactionDetails";
+import { FiSearch } from "react-icons/fi";
 
 const transactions = [
   {
@@ -123,9 +125,13 @@ export default function Transactions() {
               placeholder="Search Transaction"
               className="py-2 px-3 outline-none grow min-w-10"
             />
-            <button className="button bg-zinc-500 text-zinc-50 whitespace-nowrap flex-none">S</button>
+            <button className="button whitespace-nowrap flex-none">
+              <FiSearch />
+            </button>
           </div>
-          <button className="bg-zinc-500 text-zinc-50 button flex-none">Filter</button>
+          <button className="button flex-none">
+            <FaFilter />
+          </button>
         </div>
         <ul className="divide-y divide-zinc-100">
           {transactions.map((trans) => (
